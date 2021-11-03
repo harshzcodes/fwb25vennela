@@ -4,5 +4,13 @@ block content
   h1= title
   p Welcome to #{title}
   p making changes in index.pug 
-  button(type='button' class="btn btn-light") Press me
+  button(type='button', class="btn btn-light", onClick="update()") Press me
   
+  div(id='target') Display 
+
+  script.
+      let client_count = 0;
+      function update() {
+        client_count = client_count+1;
+        document.getElementById("target").innerHTML = `Value now ${client_count}`  ;
+      }
